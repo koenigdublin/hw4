@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
   end
 
   def index
+    
     sort = params[:sort] || session[:sort]
     case sort
     when 'title'
@@ -58,4 +59,25 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def search_tmdb
+    # hardwire to simulate failure
+    @movies = Movie.find_in_tmdb(params[:search_terms])
+   
+    session[:warning] = "'#{params[:search_terms]}' was not found in TMDb."
+    if @movies.empty?  
+      redirect_to movies_path
+      return
+    end
+  end
+  
+  def same_director
+     @m = Movie.find(params[:id])
+     if @m.director==''
+        redirect_to movies_path
+        flash[:warning]="'#{@m.title}' has no director info"
+        return
+     end
+    @movies = Movie.find_all_by_director(@m.director)
+   # redirect_to movies_path if @movies.empty?
+  end
 end

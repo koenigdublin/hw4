@@ -13,5 +13,8 @@
         #notice.message= flash[:notice]
       - elsif flash[:warning]
         #warning.message= flash[:warning]
+      - if session[:warning]
+        #notice.message= session[:warning]
 
       = yield
+    
