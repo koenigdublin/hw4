@@ -20,6 +20,7 @@ group :development,:test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'ruby-tmdb'
+  gem 'spork', '~>0.9.0.rc'
 end
 
 group :test do
