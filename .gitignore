@@ -9,3 +9,7 @@ db/*.sqlite3
 tmp/cache/assets/*
 
 coverage/assets/*
+
+coverage/.resultset.json
+
+coverage/index.html

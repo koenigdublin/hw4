@@ -7,32 +7,27 @@ gem 'rails', '3.1.0'
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 
-group :development do
+group :development,:test do
   gem 'sqlite3'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-rails'
+  gem 'ZenTest'
+  gem 'watchr'
+  gem 'simplecov'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'ruby-tmdb'
 end
 
 group :test do
-  gem 'sqlite3'
-  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
-  gem 'database_cleaner'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'rspec-rails'
-  gem 'ZenTest'
-  gem 'simplecov'
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
-  gem 'ruby-tmdb'
+
 end
+
 group :production do
   gem 'pg'
 end
