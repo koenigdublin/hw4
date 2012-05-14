@@ -8,12 +8,7 @@ db/*.sqlite3
 
 tmp/cache/assets/*
 
-coverage/assets/*
-
-coverage/.resultset.json
-
-coverage/index.html
+coverage/*
 
 Gemfile.lock
-
-app/controllers/movies_controller.rb
+ 
