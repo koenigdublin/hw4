@@ -13,3 +13,7 @@ coverage/assets/*
 coverage/.resultset.json
 
 coverage/index.html
+
+Gemfile.lock
+
+app/controllers/movies_controller.rb
